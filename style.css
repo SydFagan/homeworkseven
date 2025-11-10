@@ -1,0 +1,396 @@
+@font-face {
+  font-family: Caveat Bold;
+  src: url(../src/fonts/Caveat-Bold.ttf);
+}
+
+@font-face {
+  font-family: Caveat Regular;
+  src: url(../src/fonts/Caveat-Regular.ttf);
+}
+
+@font-face {
+  font-family: Lato Regular;
+  src: url(../src/fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+  font-family: Lato Black;
+  src: url(../src/fonts/Lato-Black.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 16px;
+}
+
+#app {
+  padding: 30px;
+}
+
+label,
+input,
+button {
+  display: block;
+  margin-bottom: 8px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  font-family: Caveat Bold;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  background: transparent;
+  height: auto;
+  padding: 0px 24px;
+}
+
+#brand {
+  display: flex;
+  align-items: center;
+  overflow: visible;
+}
+#brand a {
+  display: inline-block;
+  padding-right: 8px;
+}
+
+#brand .brand-logo {
+  display: block;
+  height: 60px;
+  width: auto;
+  padding-top: 10px;
+}
+
+.desktop-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 22px;
+}
+
+.desktop-nav a.active {
+  position: relative;
+}
+
+.desktop-nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 3px;
+  background: #111;
+}
+
+.login-btn {
+  background: #ffd972;
+  padding: 10px 22px;
+  border-radius: 24px;
+  box-shadow: 0 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+#hamburger-icon {
+  display: none;
+  cursor: pointer;
+  position: relative;
+}
+#hamburger-icon div {
+  width: 32px;
+  height: 3px;
+  background: #111;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+#hamburger-icon .mobile-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 60px;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 16px 22px;
+  gap: 12px;
+}
+#hamburger-icon.open .mobile-menu {
+  display: flex;
+  flex-direction: column;
+}
+#hamburger-icon.open .bar1 {
+  transform: translateY(8px) rotate(45deg);
+}
+#hamburger-icon.open .bar2 {
+  opacity: 0;
+}
+#hamburger-icon.open .bar3 {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(rgba(181, 59, 59, 0.62), rgba(181, 59, 59, 0.62)),
+    url("../images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-items: center;
+  padding-top: 120px;
+}
+.circle-wrapper {
+  width: 450px;
+  height: 450px;
+  position: relative;
+}
+.big-circle {
+  width: 387px;
+  height: 387px;
+  background: #ffd972;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  box-shadow: 0 8px 15px rgba(74, 73, 73, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-align: center;
+}
+.big-circle h1 {
+  font-family: Caveat Bold;
+  font-size: 32px;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+.big-circle p {
+  font-family: Lato Regular;
+  line-height: 1.5;
+  max-width: 260px;
+}
+.little-circle {
+  font-family: Lato Regular;
+  height: 168px;
+  width: 168px;
+  background: #fcbcb8;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  box-shadow: 0 8px 8px rgba(74, 73, 73, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  text-align: left;
+  font-size: 12px;
+}
+
+footer {
+  font-family: Caveat Regular;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  padding: 10px 0;
+  color: #000000;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 24px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.footer-inner p {
+  margin: 0;
+  justify-self: start;
+  opacity: 0.9;
+  font-size: 15px;
+}
+
+.footer-inner nav {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  justify-self: center;
+}
+.footer-inner nav a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.footer-inner .social {
+  display: flex;
+  gap: 14px;
+  justify-self: end;
+}
+
+.login {
+  min-height: 100vh;
+  background: #f7d774;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  font-family: Lato Regular;
+}
+.login-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 120px;
+  align-items: start;
+}
+.login-form h2 {
+  font-family: Lato Black;
+  padding-top: 120px;
+  font-size: 38px;
+  letter-spacing: 2px;
+  margin: 0 0 32px;
+}
+
+.signup-form h2 {
+  font-family: Lato Black;
+  font-size: 38px;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+.account-create {
+  color: #4b4b4b;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+label {
+  display: block;
+  margin: 20px 0;
+}
+
+label input {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-bottom: 3px solid #111;
+  padding: 10px 2px;
+  background: transparent;
+  font-size: 16px;
+}
+.btn {
+  font-family: Caveat Regular;
+  margin-top: 16px;
+  background: #ffe08a;
+  border: 0;
+  padding: 14px 32px;
+  border-radius: 26px;
+  box-shadow: 0 12px 0 rgba(0, 0, 0, 0.18);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .big-circle {
+    width: 340px;
+    height: 340px;
+  }
+  .circle-wrapper {
+    width: 400px;
+    height: 400px;
+  }
+  .desktop-nav ul {
+    gap: 18px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 72px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(6px);
+    align-items: center;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+  #hamburger-icon {
+    display: block;
+  }
+  .circle-wrapper {
+    width: 76vw;
+    height: 76vw;
+    max-width: 420px;
+    max-height: 420px;
+  }
+  .big-circle {
+    width: 100%;
+    height: 100%;
+  }
+  .little-circle {
+    width: 150px;
+    height: 150px;
+  }
+  .auth-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .panel h2 {
+    font-size: 30px;
+  }
+  .footer-inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 8px;
+    text-align: center;
+  }
+  .footer-inner .social {
+    justify-self: center;
+  }
+
+  #brand a {
+    width: 180px;
+    height: 40px;
+    background-position: left center;
+    background-size: contain;
+  }
+
+  #brand a img.brand-logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 40px;
+  }
+}
